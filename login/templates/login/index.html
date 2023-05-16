@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+    <a href="{% url 'login:logout' %}">
+        <button type="submit">
+        Выйти
+        </button>
+    </a>
+    {% else %}
+    <a href="{% url 'login:login' %}">
+        <button type="submit">
+        Вoйти
+        </button>
+    </a>
+    <a href="{% url 'login:registration' %}">
+        <button type="submit">
+        Зарегистрироваться
+        </button>
+    </a>
+    {% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title|title }}</title>
+</head>
+<body>
+    <form action="{% url 'login:login' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label class="" for='{{ form.username.id_for_label }}'>Имя пользователя</label>
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            <label class="" for="{{ form.password.id_for_label }}">Пароль</label>
+            {{ form.password }}
+        </div>
+        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+            <a class="small" href="{% url 'login:registration' %}">Создать аккаунт</a>
+            <a class="small" href="#">Забыли пароль?</a>
+            <input class="" type="submit" value="Авторизоваться">
+
+        </div>
+
+    </form>
+
+</body>
+</html>
